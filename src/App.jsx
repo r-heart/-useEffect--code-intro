@@ -4,7 +4,18 @@ function App() {
   React.useEffect(() => {
     console.log("Hello world!");
   });
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+
+  const [count, setCount] = React.useState(0);
+
+  return <button
+  type="button"
+  onClick={() => {
+    setCount((prev) => prev +1);
+  }}
+  className="rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+  >
+    Count {count}
+  </button>
 }
 
 export default App;
